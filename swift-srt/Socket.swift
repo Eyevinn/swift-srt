@@ -104,20 +104,6 @@ public struct SRTSocket {
         return SRTSocket(withSocketId: newSocket)
     }
     
-    public func acceptAsync() -> PassthroughSubject<Data, Error> {
-        let subject = PassthroughSubject<Data, Error>()
-        
-        DispatchQueue.main.async {
-            let fd = self.accept()
-            while true {
-                let data = fd.read(dataWithSize: 1316)
-                subject.send(data)
-            }
-        }
-        
-        return subject
-    }
-    
     public func close() {
         SRTWrapper.sharedInstance().closeSocket(socketId)
     }
