@@ -38,7 +38,7 @@
     SRTSOCKET socket = srt_create_socket();
     
     if (socket == SRT_ERROR) {
-        [NSException raise:@"Error when creating socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     if (sender) {
@@ -63,7 +63,7 @@
     result = srt_bind(socket, (struct sockaddr *)&addr, sizeof(addr));
     
     if (result == SRT_ERROR) {
-        [NSException raise:@"Error when binding socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return result;
@@ -73,7 +73,7 @@
     int result = srt_listen(socket, backlog);
 
     if (result == SRT_ERROR) {
-        [NSException raise:@"Error when listening to socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return result;
@@ -90,7 +90,7 @@
     int result = srt_connect(socket, (struct sockaddr *)&addr, sizeof(addr));
     
     if (result == SRT_ERROR) {
-        [NSException raise:@"Error when connecting to socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return result;
@@ -104,7 +104,7 @@
     
     if (their_fd == SRT_INVALID_SOCK) {
         srt_close(socket);
-        [NSException raise:@"Invalid socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     srt_close(socket);
@@ -116,7 +116,7 @@
     int result = srt_close(socket);
     
     if (result == SRT_ERROR) {
-        [NSException raise:@"Error when closing socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return result;
@@ -129,7 +129,7 @@
     
     int nb = srt_recvmsg(socket, (char *)buffer, (int)bufferSize);
     if (nb == SRT_ERROR) {
-        [NSException raise:@"Error when reading from socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     NSData* data = [NSData dataWithBytes: buffer length: nb];
@@ -142,7 +142,7 @@
     int result = srt_sendmsg2(socket, (const char *)chunk.bytes, (int)chunk.length, NULL);
     
     if (result == SRT_ERROR) {
-        [NSException raise:@"Error when writing to socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return result;
@@ -152,7 +152,7 @@
     int result = srt_setsockflag(socket, (SRT_SOCKOPT)option, &value, sizeof(int));
     
     if (result == SRT_ERROR) {
-        [NSException raise:@"Error when setting socket flag" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return result;
@@ -174,7 +174,7 @@
     int epid = srt_epoll_create();
     
     if (epid < 0) {
-        [NSException raise:@"Epoll Error" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return epid;
@@ -184,7 +184,7 @@
     int result = srt_epoll_add_usock(epid, socket, &events);
     
     if (result == SRT_ERROR) {
-        [NSException raise:@"Epoll Error" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     return result;
@@ -212,7 +212,7 @@
     SRT_TRACEBSTATS stats;
     
     if (srt_bstats(socket, &stats, clear) == SRT_ERROR) {
-        [NSException raise:@"Could not get stats for socket" format:@"%s", srt_getlasterror_str()];
+        [NSException raise:[@(srt_getlasterror(nil)) stringValue] format:@"%s", srt_getlasterror_str()];
     }
     
     NSDictionary* dict = @{

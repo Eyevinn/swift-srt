@@ -49,21 +49,7 @@ public enum SRTSocketOption: Int {
     case mininputbw = 38      // Minimum estimate of input stream rate.
 
     case sndkmstate = 40      // (GET) the current state of the encryption at the peer side
-    case rcvkmstate           // (GET) the current state of the encryption at the agent side
-    case lossmaxttl           // Maximum possible packet reorder tolerance (number of packets to receive after loss to send lossreport)
-    case rcvlatency           // TsbPd receiver delay (mSec) to absorb burst of missed packet retransmission
-    case peerlatency          // Minimum value of the TsbPd receiver delay (mSec) for the opposite side (peer)
-    case minversion           // Minimum SRT version needed for the peer (peers with less version will get connection reject)
-    case streamid             // A string set to a socket and passed to the listener's accepted socket
-    case congestion           // Congestion controller type selection
-    case messageapi           // In File mode, use message API (portions of data with boundaries)
-    case payloadsize          // Maximum payload size sent in one UDP packet (0 if unlimited)
     case transtype = 50       // Transmission type (set of options required for given transmission type)
-    case kmrefreshrate        // After sending how many packets the encryption key should be flipped to the new key
-    case kmpreannounce        // How many packets before key flip the new key is annnounced and after key flip the old one decommissioned
-    case enforcedencryption   // Connection to be rejected or quickly broken when one side encryption set or bad password
-    case ipv6only             // IPV6_V6ONLY mode     case peeridletimeo        // Peer-idle timeout (max time of silence heard from peer) in [ms]
-    case bindtodevice         // Forward the SOL_SOCKET/SO_BINDTODEVICE option on socket (pass packets only from that device)
     case packetfilter = 60    // Add and configure a packet filter
     case retransmitalgo = 61   // An option to select packet retransmission algorithm}
 }
@@ -84,11 +70,19 @@ public struct SRTSocket {
             throw URLError(.badURL)
         }
         
-        SRTWrapper.sharedInstance().bindSocket(socketId, forAddress: host, atPort: Int32(port))
+        if let exception = tryBlock({
+            SRTWrapper.sharedInstance().bindSocket(socketId, forAddress: host, atPort: Int32(port))
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
     }
     
-    public func listen(withBacklog backlog: Int) {
-        SRTWrapper.sharedInstance().listen(onSocket: socketId, withBacklog: Int32(backlog))
+    public func listen(withBacklog backlog: Int) throws {
+        if let exception = tryBlock({
+            SRTWrapper.sharedInstance().listen(onSocket: socketId, withBacklog: Int32(backlog))
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
     }
     
     public func connect(to url: URL) throws {
@@ -96,11 +90,22 @@ public struct SRTSocket {
             throw URLError(.badURL)
         }
         
-        SRTWrapper.sharedInstance().connect(toSocket: socketId, withHost: host, atPort: Int32(port))
+        if let exception = tryBlock({
+            SRTWrapper.sharedInstance().connect(toSocket: socketId, withHost: host, atPort: Int32(port))
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
     }
     
-    public func accept() -> SRTSocket {
-        let newSocket = SRTWrapper.sharedInstance().acceptSocket(socketId)
+    public func accept() throws -> SRTSocket {
+        var newSocket: Int32 = 0
+        
+        if let exception = tryBlock({
+            newSocket = SRTWrapper.sharedInstance().acceptSocket(socketId)
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
+        
         return SRTSocket(withSocketId: newSocket)
     }
     
@@ -108,17 +113,33 @@ public struct SRTSocket {
         SRTWrapper.sharedInstance().closeSocket(socketId)
     }
     
-    public func read(dataWithSize size: Int) -> Data {
-        SRTWrapper.sharedInstance().read(fromSocket: socketId, withChunkSize: Int32(size))
+    public func read(dataWithSize size: Int) throws -> Data {
+        var data = Data()
+        
+        if let exception = tryBlock({
+            data = SRTWrapper.sharedInstance().read(fromSocket: socketId, withChunkSize: Int32(size))
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
+        
+        return data
     }
     
-    public func write(data: Data) {
-        SRTWrapper.sharedInstance().write(toSocket: socketId, withChunk: data)
+    public func write(data: Data) throws {
+        if let exception = tryBlock({
+            SRTWrapper.sharedInstance().write(toSocket: socketId, withChunk: data)
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
     }
     
     // TODO: Add enum for option and support more types
-    public func set(option: SRTSocketOption, value: Int) {
-        SRTWrapper.sharedInstance().setOption(Int32(option.rawValue), toValue: Int32(value), forSocket: socketId)
+    public func set(option: SRTSocketOption, value: Int) throws {
+        if let exception = tryBlock({
+            SRTWrapper.sharedInstance().setOption(Int32(option.rawValue), toValue: Int32(value), forSocket: socketId)
+        }) {
+            throw SRTError(rawValue: Int(exception.name.rawValue) ?? -1) ?? SRTError.unknown
+        }
     }
     
     // TODO: Enum for options and do not use NSValue

@@ -34,12 +34,15 @@
 		817F77FE26CE8C0C00B4ECF1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77FD26CE8C0400B4ECF1 /* libcrypto.a */; };
 		817F77FF26CE8C0C00B4ECF1 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77FC26CE8C0400B4ECF1 /* libssl.a */; };
 		817F780026CE8C7D00B4ECF1 /* libsrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F926CE865900B4ECF1 /* libsrt.a */; };
-		817F780826CE8CD300B4ECF1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F780726CE8CD300B4ECF1 /* main.swift */; };
 		817F780C26CE8CF200B4ECF1 /* swift_srt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F726CE856500B4ECF1 /* swift_srt.framework */; };
 		817F780D26CE8CF200B4ECF1 /* swift_srt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F726CE856500B4ECF1 /* swift_srt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		81ECD95C26CFF400009624F8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Client.swift */; };
-		81ECD95D26CFF400009624F8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Client.swift */; };
-		81ECD95E26CFF400009624F8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Client.swift */; };
+		81ECD95C26CFF400009624F8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Server.swift */; };
+		81ECD95D26CFF400009624F8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Server.swift */; };
+		81ECD95E26CFF400009624F8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Server.swift */; };
+		81ECD98A26D2EE91009624F8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD98926D2EE91009624F8 /* Error.swift */; };
+		81ECD98B26D2EE91009624F8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD98926D2EE91009624F8 /* Error.swift */; };
+		81ECD98C26D2EE91009624F8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD98926D2EE91009624F8 /* Error.swift */; };
+		81ECD99D26D38624009624F8 /* server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD99B26D3843C009624F8 /* server.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,8 +143,9 @@
 		817F77FC26CE8C0400B4ECF1 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = macosintel/lib/libssl.a; sourceTree = "<group>"; };
 		817F77FD26CE8C0400B4ECF1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = macosintel/lib/libcrypto.a; sourceTree = "<group>"; };
 		817F780526CE8CD300B4ECF1 /* sample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sample; sourceTree = BUILT_PRODUCTS_DIR; };
-		817F780726CE8CD300B4ECF1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		81ECD95B26CFF400009624F8 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		81ECD95B26CFF400009624F8 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		81ECD98926D2EE91009624F8 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		81ECD99B26D3843C009624F8 /* server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = server.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +196,7 @@
 				8120672526CBF39B00B201E2 /* swift-srt */,
 				8167F94F26CBF5300013328D /* iphoneos */,
 				8167F95A26CBF5300013328D /* iphonesimulator */,
-				817F780626CE8CD300B4ECF1 /* sample */,
+				817F780626CE8CD300B4ECF1 /* samples */,
 				8120672426CBF39B00B201E2 /* Products */,
 				8167F93226CBF3E50013328D /* Frameworks */,
 			);
@@ -219,7 +223,8 @@
 				8100C5B426CC136200B9B889 /* SRT.swift */,
 				8100C5B726CC17A500B9B889 /* Socket.swift */,
 				8109677526CE50A9004BBC36 /* Epoll.swift */,
-				81ECD95B26CFF400009624F8 /* Client.swift */,
+				81ECD95B26CFF400009624F8 /* Server.swift */,
+				81ECD98926D2EE91009624F8 /* Error.swift */,
 			);
 			path = "swift-srt";
 			sourceTree = "<group>";
@@ -316,12 +321,12 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		817F780626CE8CD300B4ECF1 /* sample */ = {
+		817F780626CE8CD300B4ECF1 /* samples */ = {
 			isa = PBXGroup;
 			children = (
-				817F780726CE8CD300B4ECF1 /* main.swift */,
+				81ECD99B26D3843C009624F8 /* server.swift */,
 			);
-			path = sample;
+			path = samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,7 +513,8 @@
 				8100C5B526CC136200B9B889 /* SRT.swift in Sources */,
 				8109677626CE50A9004BBC36 /* Epoll.swift in Sources */,
 				8100C5B826CC17A500B9B889 /* Socket.swift in Sources */,
-				81ECD95C26CFF400009624F8 /* Client.swift in Sources */,
+				81ECD98A26D2EE91009624F8 /* Error.swift in Sources */,
+				81ECD95C26CFF400009624F8 /* Server.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +526,8 @@
 				8100C5B626CC136200B9B889 /* SRT.swift in Sources */,
 				8109677726CE50A9004BBC36 /* Epoll.swift in Sources */,
 				8100C5B926CC17A500B9B889 /* Socket.swift in Sources */,
-				81ECD95D26CFF400009624F8 /* Client.swift in Sources */,
+				81ECD98B26D2EE91009624F8 /* Error.swift in Sources */,
+				81ECD95D26CFF400009624F8 /* Server.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +539,8 @@
 				817F77EB26CE856500B4ECF1 /* SRT.swift in Sources */,
 				817F77EC26CE856500B4ECF1 /* Epoll.swift in Sources */,
 				817F77ED26CE856500B4ECF1 /* Socket.swift in Sources */,
-				81ECD95E26CFF400009624F8 /* Client.swift in Sources */,
+				81ECD98C26D2EE91009624F8 /* Error.swift in Sources */,
+				81ECD95E26CFF400009624F8 /* Server.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				817F780826CE8CD300B4ECF1 /* main.swift in Sources */,
+				81ECD99D26D38624009624F8 /* server.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
