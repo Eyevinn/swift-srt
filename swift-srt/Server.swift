@@ -21,10 +21,6 @@ public class SRTServer {
         try self.socket.listen(withBacklog: 2)
     }
     
-    deinit {
-        socket.close()
-    }
-    
     public func start(onError: ((SRTError) -> Void)? = nil) {
         guard !running else {
             return
