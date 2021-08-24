@@ -1,6 +1,8 @@
 # swift-srt
 Bindings for [SRT](https://github.com/Haivision/srt) in Swift.
 
+Using SRT version 1.4.3.
+
 ## Supported platforms
 * iOS/iPadOS
 * iOS/iPadOS Simulator (Intel Macs)
