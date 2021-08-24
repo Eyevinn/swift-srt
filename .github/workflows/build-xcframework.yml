@@ -12,10 +12,12 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: ./build-xcframework.sh
+      
+      - name: Build XCFramework
+        run: build-xcframework.sh
+        shell: bash
         
       - uses: actions/upload-artifact@v2
         with:
           name: XCFramework
-          path: ./swift-srt.xcframework
+          path: swift-srt.xcframework
