@@ -1,0 +1,21 @@
+name: Build XCFramework
+
+on:
+  push:
+    tags:
+      - '*'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: ./build-xcframework.sh
+        
+      - uses: actions/upload-artifact@v2
+        with:
+          name: XCFramework
+          path: ./swift-srt.xcframework
