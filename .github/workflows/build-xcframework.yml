@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Build XCFramework
-        run: ./build-xcframework.sh
-        shell: bash
+        run: $GITHUB_WORKSPACE/build-xcframework.sh
         
       - uses: actions/upload-artifact@v2
         with:
           name: XCFramework
           path: swift-srt.xcframework
+          if-no-files-found: error
