@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: ./build-xcframework
+        run: ./build-xcframework.sh
         
       - uses: actions/upload-artifact@v2
         with:
