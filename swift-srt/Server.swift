@@ -13,7 +13,7 @@ public class SRTServer {
     }
     private let subject = PassthroughSubject<Data, Never>()
     private let socket: SRTSocket
-    private var running = false
+    public private(set) var running = false
     
     public init(url: URL) throws {
         self.socket = SRTSocket()
@@ -40,11 +40,13 @@ public class SRTServer {
             catch {
                 if let srtError = error as? SRTError {
                     onError?(srtError)
+                    self?.running = false
                 }
             }
         }
     }
     
+    // NOTE: Because the server is async, this will not stop it immediately
     public func stop() {
         running = false
     }

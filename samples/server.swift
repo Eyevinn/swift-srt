@@ -12,21 +12,38 @@ import swift_srt
 struct App {
     static func main() {
         // Start server
-        let clientUrl = URL(string: "srt://0.0.0.0:1234")!
-        let server = try! SRTServer(url: clientUrl)
+        let hostUrl = URL(string: "srt://0.0.0.0:1234")!
+        let server = try! SRTServer(url: hostUrl)
 
+        // Print all messages that the server recieves
         let cancellable = server.publisher.sink { data in
             print(String(data: data, encoding: .utf8)!)
         }
 
-        print("Listening to " + clientUrl.absoluteString)
+        print("Listening to " + hostUrl.absoluteString)
 
+        // Start server and print errors
         server.start() { error in
-            print("Error: " + error.localizedDescription)
+            print("Server error: " + error.localizedDescription)
         }
-
-        // Wait a while before we stop
-        Thread.sleep(forTimeInterval: 5)
+        
+        // Create socket and write data
+        let serverUrl = URL(string: "srt://127.0.0.1:1234")!
+        print("Conntecting to " + serverUrl.absoluteString)
+        let socket = SRTSocket()
+        do {
+            try socket.connect(to: serverUrl)
+            try socket.write(data: "Hello!".data(using: .utf8)!)
+        }
+        catch {
+            print("Connection error: \(error.localizedDescription)")
+        }
+        
         server.stop()
+
+        // Wait until the server has stopped.
+        // This is because it is async and will not immediately stop when .stop() is called.
+        Thread.sleep(forTimeInterval: 0.5)
+        socket.close()
     }
 }
