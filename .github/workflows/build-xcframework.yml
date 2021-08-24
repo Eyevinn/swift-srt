@@ -12,10 +12,12 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: ./build-xcframework.sh
+      
+      - name: Build XCFramework
+        run: $GITHUB_WORKSPACE/build-xcframework.sh
         
       - uses: actions/upload-artifact@v2
         with:
           name: XCFramework
-          path: ./swift-srt.xcframework
+          path: swift-srt.xcframework
+          if-no-files-found: error
