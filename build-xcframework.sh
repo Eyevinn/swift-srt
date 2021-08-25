@@ -4,13 +4,13 @@ BASEDIR=$(dirname "$0")
 set -x
 
 # Build for iOS Simulator on Intel Macs
-xcodebuild archive -scheme "swift-srt (iOS Simulator)" -archivePath $BASEDIR/swift-srt-iphonesimulator.xcarchive -sdk iphonesimulator -arch x86_64 SKIP_INSTALL=NO  | xcpretty
+xcodebuild archive -scheme "swift-srt (iOS Simulator)" -archivePath $BASEDIR/swift-srt-iphonesimulator.xcarchive -sdk iphonesimulator -arch x86_64 SKIP_INSTALL=NO ENABLE_BITCODE=NO | xcpretty
 
 # Build for iOS and iPadOS
-xcodebuild archive -scheme "swift-srt (iOS/iPadOS)" -archivePath $BASEDIR/swift-srt-iphoneos.xcarchive -sdk iphoneos SKIP_INSTALL=NO  | xcpretty
+xcodebuild archive -scheme "swift-srt (iOS/iPadOS)" -archivePath $BASEDIR/swift-srt-iphoneos.xcarchive -sdk iphoneos SKIP_INSTALL=NO ENABLE_BITCODE=NO | xcpretty
 
 # Build for macOS (Intel)
-xcodebuild archive -scheme "swift-srt (macOS Intel)" -archivePath $BASEDIR/swift-srt-macosintel.xcarchive -sdk macosx SKIP_INSTALL=NO  | xcpretty
+xcodebuild archive -scheme "swift-srt (macOS Intel)" -archivePath $BASEDIR/swift-srt-macosintel.xcarchive -sdk macosx SKIP_INSTALL=NO ENABLE_BITCODE=NO | xcpretty
 
 # Create xcframework
 xcodebuild -create-xcframework \
