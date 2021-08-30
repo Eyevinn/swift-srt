@@ -698,6 +698,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/iphoneos/include";
 				INFOPLIST_FILE = "swift-srt/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -733,6 +734,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/iphoneos/include";
 				INFOPLIST_FILE = "swift-srt/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -767,6 +769,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/iphonesimulator/include";
 				INFOPLIST_FILE = "swift-srt/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -801,6 +804,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/iphonesimulator/include";
 				INFOPLIST_FILE = "swift-srt/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
