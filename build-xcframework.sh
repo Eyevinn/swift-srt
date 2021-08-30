@@ -14,10 +14,10 @@ xcodebuild archive -scheme "swift-srt (macOS Intel)" -archivePath $BASEDIR/swift
 
 # Create xcframework
 xcodebuild -create-xcframework \
--framework $BASEDIR/swift-srt-iphoneos.xcarchive/Products/Library/Frameworks/swift_srt.framework \
--framework $BASEDIR/swift-srt-iphonesimulator.xcarchive/Products/Library/Frameworks/swift_srt.framework \
--framework $BASEDIR/swift-srt-macosintel.xcarchive/Products/Library/Frameworks/swift_srt.framework \
--output $BASEDIR/swift-srt.xcframework | xcpretty
+-framework $BASEDIR/swift-srt-iphoneos.xcarchive/Products/Library/Frameworks/SwiftSRT.framework \
+-framework $BASEDIR/swift-srt-iphonesimulator.xcarchive/Products/Library/Frameworks/SwiftSRT.framework \
+-framework $BASEDIR/swift-srt-macosintel.xcarchive/Products/Library/Frameworks/SwiftSRT.framework \
+-output $BASEDIR/SwiftSRT.xcframework | xcpretty
 
 # Clean up
 rm -rf $BASEDIR/swift-srt-iphoneos.xcarchive

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import swift_srt
+import SwiftSRT
 
 @main
 struct App {

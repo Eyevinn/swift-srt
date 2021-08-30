@@ -1,4 +1,4 @@
-# swift-srt
+# SwiftSRT
 Bindings for [SRT](https://github.com/Haivision/srt) in Swift.
 
 Using SRT version 1.4.3.
@@ -19,7 +19,7 @@ Support for Cocoapods is coming soon.
 This simple example program will print the first data it recives as a base64 string.
 
 ```swift
-import swift_srt
+import SwiftSRT
 
 let url = URL(string: "srt://0.0.0.0:1234")!
 let socket = SRTSocket()

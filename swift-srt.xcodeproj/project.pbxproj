@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8100C5B526CC136200B9B889 /* SRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100C5B426CC136200B9B889 /* SRT.swift */; };
-		8100C5B626CC136200B9B889 /* SRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100C5B426CC136200B9B889 /* SRT.swift */; };
 		8100C5B826CC17A500B9B889 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100C5B726CC17A500B9B889 /* Socket.swift */; };
 		8100C5B926CC17A500B9B889 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100C5B726CC17A500B9B889 /* Socket.swift */; };
 		8109677626CE50A9004BBC36 /* Epoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109677526CE50A9004BBC36 /* Epoll.swift */; };
@@ -17,25 +15,24 @@
 		8133A8A426CC09CD002B3559 /* SRTWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 8133A8A126CC09CD002B3559 /* SRTWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8133A8A526CC09CD002B3559 /* SRTWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8133A8A226CC09CD002B3559 /* SRTWrapper.mm */; };
 		8133A8A626CC09CD002B3559 /* SRTWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8133A8A226CC09CD002B3559 /* SRTWrapper.mm */; };
-		8133A8A726CC0C23002B3559 /* swift_srt.h in Headers */ = {isa = PBXBuildFile; fileRef = 8120672626CBF39B00B201E2 /* swift_srt.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8133A8A826CC0C44002B3559 /* swift_srt.h in Headers */ = {isa = PBXBuildFile; fileRef = 8120672626CBF39B00B201E2 /* swift_srt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8133A8A726CC0C23002B3559 /* SwiftSRT.h in Headers */ = {isa = PBXBuildFile; fileRef = 8120672626CBF39B00B201E2 /* SwiftSRT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8133A8A826CC0C44002B3559 /* SwiftSRT.h in Headers */ = {isa = PBXBuildFile; fileRef = 8120672626CBF39B00B201E2 /* SwiftSRT.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8167F99426CC02310013328D /* libsrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167F99326CC02310013328D /* libsrt.a */; };
 		8167F99626CC023F0013328D /* libsrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167F99526CC023F0013328D /* libsrt.a */; };
 		8167F9A326CC051F0013328D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167F9A126CC050F0013328D /* libcrypto.a */; };
 		8167F9A426CC051F0013328D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167F9A226CC050F0013328D /* libssl.a */; };
 		8167F9A726CC05330013328D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167F9A526CC052A0013328D /* libcrypto.a */; };
 		8167F9A826CC05330013328D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167F9A626CC052A0013328D /* libssl.a */; };
-		817F77E726CE856500B4ECF1 /* swift_srt.h in Headers */ = {isa = PBXBuildFile; fileRef = 8120672626CBF39B00B201E2 /* swift_srt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		817F77E726CE856500B4ECF1 /* SwiftSRT.h in Headers */ = {isa = PBXBuildFile; fileRef = 8120672626CBF39B00B201E2 /* SwiftSRT.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		817F77E826CE856500B4ECF1 /* SRTWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 8133A8A126CC09CD002B3559 /* SRTWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		817F77EA26CE856500B4ECF1 /* SRTWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8133A8A226CC09CD002B3559 /* SRTWrapper.mm */; };
-		817F77EB26CE856500B4ECF1 /* SRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100C5B426CC136200B9B889 /* SRT.swift */; };
 		817F77EC26CE856500B4ECF1 /* Epoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109677526CE50A9004BBC36 /* Epoll.swift */; };
 		817F77ED26CE856500B4ECF1 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100C5B726CC17A500B9B889 /* Socket.swift */; };
 		817F77FE26CE8C0C00B4ECF1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77FD26CE8C0400B4ECF1 /* libcrypto.a */; };
 		817F77FF26CE8C0C00B4ECF1 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77FC26CE8C0400B4ECF1 /* libssl.a */; };
 		817F780026CE8C7D00B4ECF1 /* libsrt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F926CE865900B4ECF1 /* libsrt.a */; };
-		817F780C26CE8CF200B4ECF1 /* swift_srt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F726CE856500B4ECF1 /* swift_srt.framework */; };
-		817F780D26CE8CF200B4ECF1 /* swift_srt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F726CE856500B4ECF1 /* swift_srt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		817F780C26CE8CF200B4ECF1 /* SwiftSRT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F726CE856500B4ECF1 /* SwiftSRT.framework */; };
+		817F780D26CE8CF200B4ECF1 /* SwiftSRT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 817F77F726CE856500B4ECF1 /* SwiftSRT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		81ECD95C26CFF400009624F8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Server.swift */; };
 		81ECD95D26CFF400009624F8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Server.swift */; };
 		81ECD95E26CFF400009624F8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECD95B26CFF400009624F8 /* Server.swift */; };
@@ -101,7 +98,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				817F780D26CE8CF200B4ECF1 /* swift_srt.framework in Embed Frameworks */,
+				817F780D26CE8CF200B4ECF1 /* SwiftSRT.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,15 +106,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8100C5B426CC136200B9B889 /* SRT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRT.swift; sourceTree = "<group>"; };
 		8100C5B726CC17A500B9B889 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		8109677526CE50A9004BBC36 /* Epoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epoll.swift; sourceTree = "<group>"; };
-		8120672326CBF39B00B201E2 /* swift_srt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = swift_srt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8120672626CBF39B00B201E2 /* swift_srt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = swift_srt.h; sourceTree = "<group>"; };
+		8120672326CBF39B00B201E2 /* SwiftSRT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSRT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8120672626CBF39B00B201E2 /* SwiftSRT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftSRT.h; sourceTree = "<group>"; };
 		8120672726CBF39B00B201E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8133A8A126CC09CD002B3559 /* SRTWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SRTWrapper.h; sourceTree = "<group>"; usesTabs = 0; };
 		8133A8A226CC09CD002B3559 /* SRTWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SRTWrapper.mm; sourceTree = "<group>"; };
-		8167F94726CBF4690013328D /* swift_srt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = swift_srt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8167F94726CBF4690013328D /* SwiftSRT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSRT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8167F95226CBF5300013328D /* platform_sys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = platform_sys.h; sourceTree = "<group>"; };
 		8167F95326CBF5300013328D /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		8167F95426CBF5300013328D /* srt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = srt.h; sourceTree = "<group>"; };
@@ -138,7 +134,7 @@
 		8167F9A226CC050F0013328D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = iphoneos/lib/libssl.a; sourceTree = "<group>"; };
 		8167F9A526CC052A0013328D /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = iphonesimulator/lib/libcrypto.a; sourceTree = "<group>"; };
 		8167F9A626CC052A0013328D /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = iphonesimulator/lib/libssl.a; sourceTree = "<group>"; };
-		817F77F726CE856500B4ECF1 /* swift_srt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = swift_srt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		817F77F726CE856500B4ECF1 /* SwiftSRT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSRT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		817F77F926CE865900B4ECF1 /* libsrt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsrt.a; path = macosintel/lib/libsrt.a; sourceTree = "<group>"; };
 		817F77FC26CE8C0400B4ECF1 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = macosintel/lib/libssl.a; sourceTree = "<group>"; };
 		817F77FD26CE8C0400B4ECF1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = macosintel/lib/libcrypto.a; sourceTree = "<group>"; };
@@ -183,7 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				817F780C26CE8CF200B4ECF1 /* swift_srt.framework in Frameworks */,
+				817F780C26CE8CF200B4ECF1 /* SwiftSRT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,9 +201,9 @@
 		8120672426CBF39B00B201E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8120672326CBF39B00B201E2 /* swift_srt.framework */,
-				8167F94726CBF4690013328D /* swift_srt.framework */,
-				817F77F726CE856500B4ECF1 /* swift_srt.framework */,
+				8120672326CBF39B00B201E2 /* SwiftSRT.framework */,
+				8167F94726CBF4690013328D /* SwiftSRT.framework */,
+				817F77F726CE856500B4ECF1 /* SwiftSRT.framework */,
 				817F780526CE8CD300B4ECF1 /* sample */,
 			);
 			name = Products;
@@ -216,11 +212,10 @@
 		8120672526CBF39B00B201E2 /* swift-srt */ = {
 			isa = PBXGroup;
 			children = (
-				8120672626CBF39B00B201E2 /* swift_srt.h */,
+				8120672626CBF39B00B201E2 /* SwiftSRT.h */,
 				8120672726CBF39B00B201E2 /* Info.plist */,
 				8133A8A126CC09CD002B3559 /* SRTWrapper.h */,
 				8133A8A226CC09CD002B3559 /* SRTWrapper.mm */,
-				8100C5B426CC136200B9B889 /* SRT.swift */,
 				8100C5B726CC17A500B9B889 /* Socket.swift */,
 				8109677526CE50A9004BBC36 /* Epoll.swift */,
 				81ECD95B26CFF400009624F8 /* Server.swift */,
@@ -336,7 +331,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8133A8A826CC0C44002B3559 /* swift_srt.h in Headers */,
+				8133A8A826CC0C44002B3559 /* SwiftSRT.h in Headers */,
 				8133A8A326CC09CD002B3559 /* SRTWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +340,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8133A8A726CC0C23002B3559 /* swift_srt.h in Headers */,
+				8133A8A726CC0C23002B3559 /* SwiftSRT.h in Headers */,
 				8133A8A426CC09CD002B3559 /* SRTWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +349,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				817F77E726CE856500B4ECF1 /* swift_srt.h in Headers */,
+				817F77E726CE856500B4ECF1 /* SwiftSRT.h in Headers */,
 				817F77E826CE856500B4ECF1 /* SRTWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +373,7 @@
 			);
 			name = "swift-srt (iOS/iPadOS)";
 			productName = "swift-srt";
-			productReference = 8120672326CBF39B00B201E2 /* swift_srt.framework */;
+			productReference = 8120672326CBF39B00B201E2 /* SwiftSRT.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8167F93B26CBF4690013328D /* swift-srt (iOS Simulator) */ = {
@@ -397,7 +392,7 @@
 			);
 			name = "swift-srt (iOS Simulator)";
 			productName = "swift-srt";
-			productReference = 8167F94726CBF4690013328D /* swift_srt.framework */;
+			productReference = 8167F94726CBF4690013328D /* SwiftSRT.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		817F77E526CE856500B4ECF1 /* swift-srt (macOS Intel) */ = {
@@ -416,7 +411,7 @@
 			);
 			name = "swift-srt (macOS Intel)";
 			productName = "swift-srt";
-			productReference = 817F77F726CE856500B4ECF1 /* swift_srt.framework */;
+			productReference = 817F77F726CE856500B4ECF1 /* SwiftSRT.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		817F780426CE8CD300B4ECF1 /* sample */ = {
@@ -510,7 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8133A8A526CC09CD002B3559 /* SRTWrapper.mm in Sources */,
-				8100C5B526CC136200B9B889 /* SRT.swift in Sources */,
 				8109677626CE50A9004BBC36 /* Epoll.swift in Sources */,
 				8100C5B826CC17A500B9B889 /* Socket.swift in Sources */,
 				81ECD98A26D2EE91009624F8 /* Error.swift in Sources */,
@@ -523,7 +517,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8133A8A626CC09CD002B3559 /* SRTWrapper.mm in Sources */,
-				8100C5B626CC136200B9B889 /* SRT.swift in Sources */,
 				8109677726CE50A9004BBC36 /* Epoll.swift in Sources */,
 				8100C5B926CC17A500B9B889 /* Socket.swift in Sources */,
 				81ECD98B26D2EE91009624F8 /* Error.swift in Sources */,
@@ -536,7 +529,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				817F77EA26CE856500B4ECF1 /* SRTWrapper.mm in Sources */,
-				817F77EB26CE856500B4ECF1 /* SRT.swift in Sources */,
 				817F77EC26CE856500B4ECF1 /* Epoll.swift in Sources */,
 				817F77ED26CE856500B4ECF1 /* Socket.swift in Sources */,
 				81ECD98C26D2EE91009624F8 /* Error.swift in Sources */,
@@ -615,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -673,7 +665,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -709,9 +701,10 @@
 					"$(PROJECT_DIR)/iphoneos",
 					"$(PROJECT_DIR)/iphoneos/lib",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
-				PRODUCT_NAME = swift_srt;
+				PRODUCT_NAME = SwiftSRT;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -745,9 +738,10 @@
 					"$(PROJECT_DIR)/iphoneos",
 					"$(PROJECT_DIR)/iphoneos/lib",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
-				PRODUCT_NAME = swift_srt;
+				PRODUCT_NAME = SwiftSRT;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -779,9 +773,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iphonesimulator/lib",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
-				PRODUCT_NAME = swift_srt;
+				PRODUCT_NAME = SwiftSRT;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = iphonesimulator;
 				SUPPORTS_MACCATALYST = NO;
@@ -814,9 +809,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iphonesimulator/lib",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
-				PRODUCT_NAME = swift_srt;
+				PRODUCT_NAME = SwiftSRT;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = iphonesimulator;
 				SUPPORTS_MACCATALYST = NO;
@@ -848,9 +844,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/macosintel/lib",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
-				PRODUCT_NAME = swift_srt;
+				PRODUCT_NAME = SwiftSRT;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
@@ -884,9 +881,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/macosintel/lib",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
-				PRODUCT_NAME = swift_srt;
+				PRODUCT_NAME = SwiftSRT;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
