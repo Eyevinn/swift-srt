@@ -11,7 +11,7 @@ Using SRT version 1.4.3.
 More platforms will be supported in the future.
 
 ## Usage
-The easiest way to use the framework is to build a .xcframework-file. This can be done by running the script `build-xcframework.sh`. After running the script, you should find `swift-srt.xcframework` which you can simply drag and drop in to the "Frameworks, Libraries, and Embedded Content"-list in Xcode.
+The easiest way to use the framework is to build a .xcframework-file. This can be done by running the script `build-xcframework.sh`. After running the script, you should find `build/swift-srt.xcframework` which you can simply drag and drop in to the "Frameworks, Libraries, and Embedded Content"-list in Xcode.
 
 Support for Cocoapods is coming soon.
 
