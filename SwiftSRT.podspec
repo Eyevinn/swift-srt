@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
     s.source            = { :http => 'https://github.com/Eyevinn/swift-srt/archive/refs/tags/v0.1.0.zip' } 
     s.ios.deployment_target = '13.0'
     s.osx.deployment_target = '10.15'
-    s.ios.vendored_frameworks = 'build/SwiftSRT.xcframework'
+    s.vendored_frameworks = 'build/SwiftSRT.xcframework'
 end 
