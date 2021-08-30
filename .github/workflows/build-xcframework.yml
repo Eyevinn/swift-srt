@@ -19,5 +19,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: XCFramework
-          path: build 
+          path: Frameworks 
           if-no-files-found: error
