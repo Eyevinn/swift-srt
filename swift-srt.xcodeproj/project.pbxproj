@@ -844,6 +844,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/macosintel/lib",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
@@ -881,6 +882,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/macosintel/lib",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
