@@ -2,8 +2,7 @@ name: Deploy to Cocoapods Trunk
 
 on:
   release:
-    types:
-      - created
+    types: [published]
 
 jobs:
   build:
