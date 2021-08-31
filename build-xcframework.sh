@@ -10,8 +10,8 @@ xcrun xcodebuild build -project swift-srt.xcodeproj -configuration Release BUILD
 # Build for iOS Simulator
 xcrun xcodebuild build -project swift-srt.xcodeproj -configuration Release BUILD_LIBRARY_FOR_DISTRIBUTION=YES -scheme "swift-srt (iOS Simulator)" -destination 'generic/platform=iOS Simulator' -derivedDataPath "${OUTPUT_DIR}"
 
-# Build for macOS (Intel)
-xcrun xcodebuild build -project swift-srt.xcodeproj -configuration Release BUILD_LIBRARY_FOR_DISTRIBUTION=YES -scheme "swift-srt (macOS Intel)" -destination 'generic/platform=macOS' -derivedDataPath "${OUTPUT_DIR}"
+# Build for macOS
+xcrun xcodebuild build -project swift-srt.xcodeproj -configuration Release BUILD_LIBRARY_FOR_DISTRIBUTION=YES -scheme "swift-srt (macOS)" -destination 'generic/platform=macOS' -derivedDataPath "${OUTPUT_DIR}"
 
 # Remove old xcframework
 rm -rf $BUILD_DIR/SwiftSRT.xcframework

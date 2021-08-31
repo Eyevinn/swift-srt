@@ -1,0 +1,162 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftSRT
+import Combine
+import Foundation
+import Swift
+@_exported import SwiftSRT
+public struct SRTEpollEventSet : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public init(rawValue: Swift.Int)
+  public static let input: SwiftSRT.SRTEpollEventSet
+  public static let output: SwiftSRT.SRTEpollEventSet
+  public static let error: SwiftSRT.SRTEpollEventSet
+  public static let update: SwiftSRT.SRTEpollEventSet
+  public static let edgeTriggered: SwiftSRT.SRTEpollEventSet
+  public typealias ArrayLiteralElement = SwiftSRT.SRTEpollEventSet
+  public typealias Element = SwiftSRT.SRTEpollEventSet
+  public typealias RawValue = Swift.Int
+}
+public struct SRTEpollEvent {
+  public let socket: SwiftSRT.SRTSocket
+  public let events: SwiftSRT.SRTEpollEventSet
+  public init(socket: SwiftSRT.SRTSocket, events: SwiftSRT.SRTEpollEventSet)
+}
+public struct SRTEpoll {
+  public init()
+  public func addSocket(_ socket: SwiftSRT.SRTSocket, events: SwiftSRT.SRTEpollEventSet)
+  public func getEvents(withTimeoutInMs timeout: Swift.Int32) -> [SwiftSRT.SRTEpollEvent]
+}
+public enum SRTSocketOption : Swift.Int {
+  case mss
+  case sndsyn
+  case rcvsyn
+  case isn
+  case fc
+  case sndbuf
+  case rcvbuf
+  case linger
+  case udp_sndbuf
+  case udp_rcvbuf
+  case rendezvous
+  case sndtimeo
+  case rcvtimeo
+  case reuseaddr
+  case maxbw
+  case state
+  case event
+  case snddata
+  case rcvdata
+  case sender
+  case tsbpdmode
+  case latency
+  case inputbw
+  case oheadbw
+  case passphrase
+  case pbkeylen
+  case kmstate
+  case ipttl
+  case iptos
+  case tlpktdrop
+  case snddropdelay
+  case nakreport
+  case version
+  case peerversion
+  case conntimeo
+  case drifttracer
+  case mininputbw
+  case sndkmstate
+  case transtype
+  case packetfilter
+  case retransmitalgo
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct SRTSocket {
+  public let socketId: Swift.Int32
+  public init(sender: Swift.Bool = false)
+  public init(withSocketId socket: Swift.Int32)
+  public func bind(to url: Foundation.URL) throws
+  public func listen(withBacklog backlog: Swift.Int) throws
+  public func connect(to url: Foundation.URL) throws
+  public func accept() throws -> SwiftSRT.SRTSocket
+  public func close()
+  public func read(dataWithSize size: Swift.Int) throws -> Foundation.Data
+  public func write(data: Foundation.Data) throws
+  public func set(option: SwiftSRT.SRTSocketOption, value: Swift.Int) throws
+  public func get(option: SwiftSRT.SRTSocketOption) -> Foundation.NSValue
+  public func stats(shouldClear clear: Swift.Bool) -> [Swift.AnyHashable : Any]
+}
+public enum SRTError : Swift.Int, Swift.Error {
+  case unknown
+  case esockfail
+  case etimeout
+  case econnsetup
+  case enoconn
+  case econnsock
+  case erdperm
+  case easyncfail
+  case esclosed
+  case epollempty
+  case econnrej
+  case efile
+  case einvrdoff
+  case einvop
+  case erdvnoserv
+  case einvsock
+  case enolisten
+  case eduplisten
+  case epeererr
+  case ewrperm
+  case einvalbufferapi
+  case erdvunbound
+  case esysobj
+  case enoserver
+  case easyncsnd
+  case einvwroff
+  case einvalmsgapi
+  case eunboundsock
+  case econgest
+  case enobuf
+  case econnlost
+  case einvparam
+  case einvpollid
+  case easyncrcv
+  case esecfail
+  case elargemsg
+  case econnfail
+  case ethread
+  case eboundsock
+  case eresource
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension SRTError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public class SRTServer {
+  public var publisher: Combine.AnyPublisher<Foundation.Data, Swift.Never> {
+    get
+  }
+  public var running: Swift.Bool {
+    get
+  }
+  public init(url: Foundation.URL) throws
+  public func start(onError: ((SwiftSRT.SRTError) -> Swift.Void)? = nil)
+  public func stop()
+  @objc deinit
+}
+extension SwiftSRT.SRTSocketOption : Swift.Equatable {}
+extension SwiftSRT.SRTSocketOption : Swift.Hashable {}
+extension SwiftSRT.SRTSocketOption : Swift.RawRepresentable {}
+extension SwiftSRT.SRTError : Swift.Equatable {}
+extension SwiftSRT.SRTError : Swift.Hashable {}
+extension SwiftSRT.SRTError : Swift.RawRepresentable {}
