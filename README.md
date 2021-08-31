@@ -5,7 +5,7 @@ Using SRT version 1.4.3.
 
 ## Supported platforms
 * iOS/iPadOS
-* iOS/iPadOS Simulator (Intel Macs)
+* iOS/iPadOS Simulator
 * macOS (Intel)
 
 More platforms will be supported in the future.

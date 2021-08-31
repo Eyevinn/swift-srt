@@ -4,24 +4,24 @@ BUILD_DIR=$(dirname "$0")/Frameworks
 OUTPUT_DIR=$( mktemp -d )
 set -x
 
-# Build for iOS Simulator on Intel Macs
-xcodebuild archive -scheme "swift-srt (iOS Simulator)" -archivePath $OUTPUT_DIR/swift-srt-iphonesimulator.xcarchive -sdk iphonesimulator -arch x86_64 SKIP_INSTALL=NO ENABLE_BITCODE=NO | xcpretty
-
 # Build for iOS and iPadOS
-xcodebuild archive -scheme "swift-srt (iOS/iPadOS)" -archivePath $OUTPUT_DIR/swift-srt-iphoneos.xcarchive -sdk iphoneos SKIP_INSTALL=NO ENABLE_BITCODE=NO | xcpretty
+xcrun xcodebuild build -project swift-srt.xcodeproj -configuration Release BUILD_LIBRARY_FOR_DISTRIBUTION=YES -scheme "swift-srt (iOS/iPadOS)" -destination 'generic/platform=iOS' -derivedDataPath "${OUTPUT_DIR}"
+
+# Build for iOS Simulator
+xcrun xcodebuild build -project swift-srt.xcodeproj -configuration Release BUILD_LIBRARY_FOR_DISTRIBUTION=YES -scheme "swift-srt (iOS Simulator)" -destination 'generic/platform=iOS Simulator' -derivedDataPath "${OUTPUT_DIR}"
 
 # Build for macOS (Intel)
-xcodebuild archive -scheme "swift-srt (macOS Intel)" -archivePath $OUTPUT_DIR/swift-srt-macosintel.xcarchive -sdk macosx SKIP_INSTALL=NO ENABLE_BITCODE=NO | xcpretty
+xcrun xcodebuild build -project swift-srt.xcodeproj -configuration Release BUILD_LIBRARY_FOR_DISTRIBUTION=YES -scheme "swift-srt (macOS Intel)" -destination 'generic/platform=macOS' -derivedDataPath "${OUTPUT_DIR}"
 
 # Remove old xcframework
 rm -rf $BUILD_DIR/SwiftSRT.xcframework
 
 # Create xcframework
 xcodebuild -create-xcframework \
--framework $OUTPUT_DIR/swift-srt-iphoneos.xcarchive/Products/Library/Frameworks/SwiftSRT.framework \
--framework $OUTPUT_DIR/swift-srt-iphonesimulator.xcarchive/Products/Library/Frameworks/SwiftSRT.framework \
--framework $OUTPUT_DIR/swift-srt-macosintel.xcarchive/Products/Library/Frameworks/SwiftSRT.framework \
--output $BUILD_DIR/SwiftSRT.xcframework | xcpretty
+-framework "${OUTPUT_DIR}/Build/Products/Release-iphoneos/SwiftSRT.framework" \
+-framework "${OUTPUT_DIR}/Build/Products/Release-iphonesimulator/SwiftSRT.framework" \
+-framework "${OUTPUT_DIR}/Build/Products/Release/SwiftSRT.framework" \
+-output "${BUILD_DIR}/SwiftSRT.xcframework"
 
 # Clean up
 rm -rf $OUTPUT_DIR

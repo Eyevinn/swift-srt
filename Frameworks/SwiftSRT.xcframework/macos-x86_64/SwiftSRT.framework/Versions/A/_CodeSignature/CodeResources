@@ -32,6 +32,20 @@
 			wmdQQprWit5Wj6s+WqgyOATx2UKsDN4461PDSlz3tmw=
 			</data>
 		</dict>
+		<key>Modules/SwiftSRT.swiftmodule/Project/x86_64-apple-macos.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VMPFRZ9ORNrqyiCDg9RhDCvo1rW70dNmg4Kx+6+UFHI=
+			</data>
+		</dict>
+		<key>Modules/SwiftSRT.swiftmodule/Project/x86_64.swiftsourceinfo</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VMPFRZ9ORNrqyiCDg9RhDCvo1rW70dNmg4Kx+6+UFHI=
+			</data>
+		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
@@ -50,7 +64,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NVo91GLIE1Q9b5PN7MabVSXwBtF9YlVKHk2mmJnuD4s=
+			yz2eYwyLpXQOZJsY63l+PLhBVm5ZFELJBJNmQXyTKag=
 			</data>
 		</dict>
 		<key>Modules/SwiftSRT.swiftmodule/x86_64.swiftdoc</key>
@@ -71,7 +85,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NVo91GLIE1Q9b5PN7MabVSXwBtF9YlVKHk2mmJnuD4s=
+			yz2eYwyLpXQOZJsY63l+PLhBVm5ZFELJBJNmQXyTKag=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
