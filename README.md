@@ -6,14 +6,24 @@ Using SRT version 1.4.3.
 ## Supported platforms
 * iOS/iPadOS
 * iOS/iPadOS Simulator
-* macOS (Intel)
-
-More platforms will be supported in the future.
+* macOS
 
 ## Usage
-The easiest way to use the framework is use the .xcframework-file. You can find it at `Frameworks/SwiftSRT.xcframework` which you can simply drag and drop in to the "Frameworks, Libraries, and Embedded Content"-list in Xcode.
+SwiftSRT can be used with Swift Package Manager, Cocoapods, or by simply dragging the framework `Frameworks/SwiftSRT.xcframework` to the "Frameworks, Libraries, and Embedded Content"-list in Xcode.
 
-Support for Cocoapods is coming soon.
+### Cocoapods
+Add SwiftSRT by adding the following to the desired target in your Podfile:
+```
+pod 'SwiftSRT', '~> 0.1'
+```
+
+### Swift Package Manager
+To add SwiftSRT, your dependency list should look something like this:
+```swift
+dependencies: [
+    .package(url: "https://github.com/Eyevinn/swift-srt", .upToNextMinor(from: "0.1.0"))
+]
+```
 
 ## Example
 This simple example program will print the first data it recives as a base64 string.
@@ -31,3 +41,5 @@ let fd = socket.accept()
 let chunk = fd.read(dataWithSize: 1316)
 print(chunk.base64EncodedString())
 ```
+
+There are more examples in the `samples`-folder.
