@@ -29,7 +29,7 @@ struct App {
         
         // Create socket and write data
         let serverUrl = URL(string: "srt://127.0.0.1:1234")!
-        print("Conntecting to " + serverUrl.absoluteString)
+        print("Connecting to " + serverUrl.absoluteString)
         let socket = SRTSocket()
         do {
             try socket.connect(to: serverUrl)
