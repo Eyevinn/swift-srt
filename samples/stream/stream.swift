@@ -14,5 +14,6 @@ struct App {
         // Initialise stream (and start server)
         let serverUrl = URL(string: "srt://0.0.0.0:1234")!
         let stream = try! SRTStream(serverUrl: serverUrl)
+        stream.close()
     }
 }
