@@ -13,20 +13,32 @@ public class SRTStream {
     public init(serverUrl: URL) throws {
         self.socket = SRTSocket(sender: true)
         print("Will start streaming to \(serverUrl)")
+        do {
+            try self.socket.bind(to: serverUrl)
+            try self.socket.connect(to: serverUrl)
+        }
+        catch {
+            print("Connection error: \(error.localizedDescription)")
+        }
     }
     
     public func close() {
-        socket.close()
+        self.socket.close()
     }
     
     deinit {
-        socket.close()
+        self.socket.close()
     }
 }
 
 // MARK: - TSWriterDelegate
 extension SRTStream: TSWriterDelegate {
     public func didOutput(_ data: Data) {
-        // send here
+        do {
+            try self.socket.write(data: data)
+        }
+        catch {
+            print("Connection error: \(error.localizedDescription)")
+        }
     }
 }
