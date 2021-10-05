@@ -11,11 +11,12 @@ import SwiftSRT
 @main
 struct App {
     static func main() {
+       
         // Start server
         let hostUrl = URL(string: "srt://0.0.0.0:1234")!
         let server = try! SRTServer(url: hostUrl)
 
-        // Print all messages that the server recieves
+        // Print all messages that the server receives
         let cancellable = server.publisher.sink { data in
             print(String(data: data, encoding: .utf8)!)
         }
@@ -28,12 +29,15 @@ struct App {
         }
 
         // Initialise stream (and start server)
-        let serverUrl = URL(string: "srt://0.0.0.0:1234")!
+        let serverUrl = URL(string: "srt://127.0.0.1:1234")!
         let stream = try! SRTStream(serverUrl: serverUrl)
-        _ = DummyWriter(timeInterval: 1.0, numWrites: 4, stream: stream)
-        
-        stream.close()
-        server.stop()
+        let dummyWriter = DummyWriter(timeInterval: 1.0, numWrites: 4, stream: stream)
+        dummyWriter.start(done: {
+            server.stop()
+            Thread.sleep(forTimeInterval: 0.5)
+            stream.close() // Not necessary, but may be useful
+            exit(0)
+        })
         RunLoop.current.run()
     }
 }
@@ -49,6 +53,9 @@ class DummyWriter {
         self.timeInterval = timeInterval
         self.numWrites = numWrites
         self.delegate = stream
+    }
+    
+    public func start(done: @escaping () -> Void) {
         // set up timer
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             self.runCount += 1
@@ -56,14 +63,8 @@ class DummyWriter {
             self.delegate.didOutput(dataBlock!)
             if(self.runCount == self.numWrites) {
                 timer.invalidate()
+                done()
             }
         })
-    }
-    
-    deinit {
-        // destroyTimer
-        if(timer!.isValid) {
-            timer!.invalidate()
-        }
     }
 }

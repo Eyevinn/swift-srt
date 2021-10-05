@@ -15,7 +15,7 @@ struct App {
         let hostUrl = URL(string: "srt://0.0.0.0:1234")!
         let server = try! SRTServer(url: hostUrl)
 
-        // Print all messages that the server recieves
+        // Print all messages that the server receives
         let cancellable = server.publisher.sink { data in
             print(String(data: data, encoding: .utf8)!)
         }
