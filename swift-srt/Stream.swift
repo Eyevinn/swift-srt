@@ -14,7 +14,6 @@ public class SRTStream {
         self.socket = SRTSocket(sender: true)
         print("Will start streaming to \(serverUrl)")
         do {
-            try self.socket.bind(to: serverUrl)
             try self.socket.connect(to: serverUrl)
         }
         catch {
