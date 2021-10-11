@@ -9,7 +9,7 @@ import Foundation
 
 public class SRTStream {
     private let socket: SRTSocket
-    private let connected: Bool = false
+    private var connected: Bool = false
     
     public init(serverUrl: URL) throws {
         self.socket = SRTSocket(sender: true)
