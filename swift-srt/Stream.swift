@@ -9,12 +9,14 @@ import Foundation
 
 public class SRTStream {
     private let socket: SRTSocket
+    private let connected: Bool = false
     
     public init(serverUrl: URL) throws {
         self.socket = SRTSocket(sender: true)
         print("Will start streaming to \(serverUrl)")
         do {
             try self.socket.connect(to: serverUrl)
+            self.connected = true
         }
         catch {
             print("Connection error: \(error.localizedDescription)")
@@ -22,11 +24,16 @@ public class SRTStream {
     }
     
     public func close() {
-        self.socket.close()
+        if(self.connected) {
+            self.socket.close()
+        }
     }
     
     deinit {
-        self.socket.close()
+        if(self.connected) {
+            self.socket.close()
+        }
+        
     }
 }
 
