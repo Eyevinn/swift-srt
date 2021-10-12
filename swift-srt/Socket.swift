@@ -54,6 +54,19 @@ public enum SRTSocketOption: Int {
     case retransmitalgo = 61   // An option to select packet retransmission algorithm}
 }
 
+public enum SRTSocketState: Int {
+    case socket_init = 1
+    case opened
+    case listening
+    case connecting
+    case connected
+    case broken
+    case closing
+    case closed
+    case nonexist
+    case unknown                // Default value (our own)
+}
+
 public struct SRTSocket {
     public let socketId: Int32
 
@@ -149,5 +162,10 @@ public struct SRTSocket {
     
     public func stats(shouldClear clear: Bool) -> [AnyHashable: Any] {
         SRTWrapper.sharedInstance().stats(forSocket: socketId, shouldClear: clear)
+    }
+    
+    public func getState() -> SRTSocketState {
+        let socketState = SRTWrapper.sharedInstance().getStateFromSocket(socketId)
+        return SRTSocketState.init(rawValue: Int(socketState)) ?? SRTSocketState.unknown
     }
 }
