@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "817F780426CE8CD300B4ECF1"
-               BuildableName = "sample"
-               BlueprintName = "sample"
+               BuildableName = "server example"
+               BlueprintName = "server example"
                ReferencedContainer = "container:swift-srt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817F780426CE8CD300B4ECF1"
-            BuildableName = "sample"
-            BlueprintName = "sample"
+            BuildableName = "server example"
+            BlueprintName = "server example"
             ReferencedContainer = "container:swift-srt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "817F780426CE8CD300B4ECF1"
-            BuildableName = "sample"
-            BlueprintName = "sample"
+            BuildableName = "server example"
+            BlueprintName = "server example"
             ReferencedContainer = "container:swift-srt.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

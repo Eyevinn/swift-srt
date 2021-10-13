@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8167F93B26CBF4690013328D"
-               BuildableName = "swift_srt.framework"
+               BuildableName = "SwiftSRT.framework"
                BlueprintName = "swift-srt (iOS Simulator)"
                ReferencedContainer = "container:swift-srt.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8167F93B26CBF4690013328D"
-            BuildableName = "swift_srt.framework"
+            BuildableName = "SwiftSRT.framework"
             BlueprintName = "swift-srt (iOS Simulator)"
             ReferencedContainer = "container:swift-srt.xcodeproj">
          </BuildableReference>

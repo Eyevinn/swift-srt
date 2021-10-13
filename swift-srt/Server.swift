@@ -31,7 +31,6 @@ public class SRTServer {
         DispatchQueue.global().async { [weak self] in
             do {
                 let fd = try self?.socket.accept()
-
                 while let fd = fd, let subject = self?.subject, let running = self?.running, running {
                     let data = try fd.read(dataWithSize: 1316)
                     subject.send(data)

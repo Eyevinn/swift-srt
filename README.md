@@ -3,6 +3,81 @@ Bindings for [SRT](https://github.com/Haivision/srt) in Swift. Maintained by [Ey
 
 Using SRT version 1.4.3.
 
+You can start a server as follows: 
+
+```swift
+    // Start server
+    let hostUrl = URL(string: "srt://0.0.0.0:1234")!
+    let server = try! SRTServer(url: hostUrl)
+
+    // Print all messages that the server receives (just for example)
+    let cancellable = server.publisher.sink { data in
+        print(String(data: data, encoding: .utf8)!)
+    }
+
+    print("Listening to " + hostUrl.absoluteString)
+
+    // Start server and print errors
+    server.start() { error in
+        print("Server error: " + error.localizedDescription)
+    }
+```
+
+And to write data to it, you create a socket and connect it as follows:
+
+```swift
+    // Create socket and write data
+    let serverUrl = URL(string: "srt://127.0.0.1:1234")!
+    print("Connecting to " + serverUrl.absoluteString)
+    let socket = SRTSocket()
+    do {
+        try socket.connect(to: serverUrl)
+        try socket.write(data: "Hello!".data(using: .utf8)!)
+    }
+    catch {
+        print("Connection error: \(error.localizedDescription)")
+    }
+```
+
+NB: Remember to stop the server and close the socket after use:
+
+```swift
+    server.stop()
+    socket.close()
+```
+
+See the full example in the `samples/server`-folder.
+
+You can also create a stream that will output data to handle via a delegate. Create the stream as follows:
+
+```swift
+    // Initialise stream (and start server)
+    let serverUrl = URL(string: "srt://127.0.0.1:1234")!
+    let stream = try! SRTStream(serverUrl: serverUrl)
+```
+
+A class designed to write or otherwise handle the data stream can maintain a `TSWriterDelegate`:
+
+```swift
+class TSWriter {
+    ...
+    private var delegate: TSWriterDelegate
+    ...
+    public func aWriterFunc () {
+        ...
+        let dataBlock: Data? = "dataBlock".data(using: .utf8)
+
+        self.delegate.didOutput(dataBlock!)
+        ...
+    }
+}
+```
+
+NB: The SRTStream will close the underlying socket on destruction, but you can close() explicitly if you wish.
+
+See the full example in the `samples/stream`-folder.
+
+
 ## Supported platforms
 * iOS/iPadOS
 * iOS/iPadOS Simulator
@@ -25,7 +100,7 @@ dependencies: [
 ]
 ```
 
-## Example
+## A further simple example
 This simple example program will print the first data it recives as a base64 string.
 
 ```swift
