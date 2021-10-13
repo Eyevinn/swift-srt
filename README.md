@@ -89,14 +89,14 @@ SwiftSRT can be used with Swift Package Manager, Cocoapods, or by simply draggin
 ### Cocoapods
 Add SwiftSRT by adding the following to the desired target in your Podfile:
 ```
-pod 'SwiftSRT', '~> 0.1'
+pod 'SwiftSRT', '~> 0.2'
 ```
 
 ### Swift Package Manager
 To add SwiftSRT, your dependency list should look something like this:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Eyevinn/swift-srt", .upToNextMinor(from: "0.1.0"))
+    .package(url: "https://github.com/Eyevinn/swift-srt", .upToNextMinor(from: "0.2.0"))
 ]
 ```
 
