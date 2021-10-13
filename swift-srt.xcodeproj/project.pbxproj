@@ -836,7 +836,7 @@
 					"$(PROJECT_DIR)/iphoneos",
 					"$(PROJECT_DIR)/iphoneos/lib",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
 				PRODUCT_NAME = SwiftSRT;
@@ -873,7 +873,7 @@
 					"$(PROJECT_DIR)/iphoneos",
 					"$(PROJECT_DIR)/iphoneos/lib",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
 				PRODUCT_NAME = SwiftSRT;
@@ -912,7 +912,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iphonesimulator/lib",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
 				PRODUCT_NAME = SwiftSRT;
@@ -952,7 +952,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iphonesimulator/lib",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
 				PRODUCT_NAME = SwiftSRT;
@@ -991,7 +991,7 @@
 					"$(PROJECT_DIR)/macos/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
 				PRODUCT_NAME = SwiftSRT;
@@ -1032,7 +1032,7 @@
 					"$(PROJECT_DIR)/macos/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MODULEMAP_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "se.eyevinn.swift-srt";
 				PRODUCT_NAME = SwiftSRT;
