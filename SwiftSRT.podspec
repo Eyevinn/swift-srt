@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name              = 'SwiftSRT'
-    s.version           = '0.1.0'
+    s.version           = '0.2.0'
     s.summary           = 'Swift bindings for SRT. Maintained by Eyevinn Technology.'
     s.description       = <<-DESC
                             SwiftSRT is a Swift framework providing bindings for SRT - Secure Reliable Transport.
