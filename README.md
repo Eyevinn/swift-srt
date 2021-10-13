@@ -26,16 +26,16 @@ You can start a server as follows:
 And to write data to it, you create a socket and connect it as follows:
 
 ```swift
-    // Print all messages that the server receives
-    let cancellable = server.publisher.sink { data in
-        print(String(data: data, encoding: .utf8)!)
+    // Create socket and write data
+    let serverUrl = URL(string: "srt://127.0.0.1:1234")!
+    print("Connecting to " + serverUrl.absoluteString)
+    let socket = SRTSocket()
+    do {
+        try socket.connect(to: serverUrl)
+        try socket.write(data: "Hello!".data(using: .utf8)!)
     }
-
-    print("Listening to " + hostUrl.absoluteString)
-
-    // Start server and print errors
-    server.start() { error in
-        print("Server error: " + error.localizedDescription)
+    catch {
+        print("Connection error: \(error.localizedDescription)")
     }
 ```
 
