@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                             SwiftSRT is maintained by Eyevinn Technology.
                           DESC
     s.homepage          = 'https://github.com/Eyevinn/swift-srt'
-    s.author            = { 'Jesper Lundqvist' => 'jesper.lundqvist@eyevinn.se' }
+    s.authors           = { 'Jesper Lundqvist' => 'jesper.lundqvist@eyevinn.se', 'Alan Allard' => 'alan.allard@eyevinn.se' }
     s.license           = { :type => "MIT", :text => "MIT License" }
 
     s.cocoapods_version = '>= 1.9'
